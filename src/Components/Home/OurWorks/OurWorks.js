@@ -1,6 +1,5 @@
 import React from 'react';
 import './OurWorks.css';
-import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import carousel1 from '../../../images/carousel-1.png';
@@ -24,7 +23,7 @@ const OurWorks = () => {
                 </div>
                 <div className="carousel-inner">
                     <img src={carousel3} />
-                    <p className="legend">UX Design</p>
+                    <p className="legend">Graphics Design</p>
                 </div>
 
             </Carousel>

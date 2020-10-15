@@ -4,7 +4,7 @@ import './AllServices.css';
 
 const AllServices = ({ allServices }) => {
 
-    const { id, image, title, description } = allServices;
+    const { _id, image, title, description } = allServices;
 
     return (
         <Link to={'/dashboard'} style={{ textDecoration: 'none' }} >

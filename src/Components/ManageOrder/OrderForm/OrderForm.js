@@ -1,14 +1,22 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { useForm } from 'react-hook-form';
+import { UserContext } from '../../../App';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
+import './OrderForm.css';
 
 const OrderForm = () => {
 
-    const { register, handleSubmit, errors } = useForm();
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const {name, email, photoURL} = loggedInUser;
+
+    const {handleSubmit} = useForm();
+
+
 
     const onSubmit = data => {
 
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://mighty-bastion-72908.herokuapp.com/addOrder', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
@@ -25,42 +33,22 @@ const OrderForm = () => {
         <div className="row">
             <Sidebar></Sidebar>
             <div style={{ height: '100vh', width: '80%', background: '#F4F7FC' }}>
-                <h2 className="pt-5 ml-5" >Order</h2>
+
+            <div className="pt-5 ml-5 d-flex justify-content-between">
+                    <h1 >Order</h1>
+                    <h3 className="mr-5">{name}</h3>
+                </div>
+
                 <form className="customFormStyle" onSubmit={handleSubmit(onSubmit)}>
-
-                    <div className="form-group">
-                        <input type="text" ref={register({ required: true })} name="name" className="form-control form-control-lg" placeholder="Your name / company’s name" />
-                        {errors.name && <span className="text-danger">This field is required</span>}
+                    <div className="order-box p-5 mt-5">
+                        <input className="form-control" type="text"  name="name" placeholder="Your name / company’s name" required/>
+                        <input className="form-control" type="text"  name="email" placeholder="Your email address" required/>
+                        <input className="form-control"type="text"  name="serviceName" placeholder="Product Name" />
+                        <textarea rows="5" className="form-control" type="text" placeholder="Product Details" /><br />
+                        <input className="form-control" type="number"  name="price" placeholder="Price" />
+                        <input type="file" /><br/><br/>
+                        <button type="submit" className="btn btnSubmit">Submit</button>
                     </div>
-
-                    <div className="form-group">
-                        <input type="text" ref={register({ required: true })} name="email" className="form-control form-control-lg" placeholder="Your email address" />
-                        {errors.email && <span className="text-danger">This field is required</span>}
-
-                    </div>
-
-                    <div className="form-group">
-                        <input type="text" ref={register({ required: true })} name="serviceName" className="form-control form-control-lg" placeholder="Graphic Design" />
-                        {errors.serviceName && <span className="text-danger">This field is required</span>}
-                    </div>
-
-                    <div className="form-group">
-                        <textarea type="text" ref={register({ required: true })} name="details" className="form-control" cols="30" rows="6" placeholder="Project Details"></textarea>
-                        {errors.details && <span className="text-danger">This field is required</span>}
-                    </div>
-
-                    <div className="form-group">
-                        <div class="form-row">
-                            <div class="col">
-                                <input type="number" ref={register({ required: true })} name="price" className="form-control form-control-lg" placeholder="Price" />
-                                {errors.price && <span className="text-danger">This field is required</span>}
-                            </div>
-                            <div class="col">
-                                <button type="file" className="btn btn-success w-100 form-control-lg btnUploadFile"> Upload project file </button>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btnSubmit" >Submit</button>
                 </form>
             </div>
         </div>

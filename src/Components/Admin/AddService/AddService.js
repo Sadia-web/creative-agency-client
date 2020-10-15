@@ -2,6 +2,23 @@ import React from 'react';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 
 const AddService = () => {
+
+    const { register, handleSubmit, errors } = useForm();
+
+    const onSubmit = data => {
+        fetch('http://localhost:5000/addService', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(success => {
+                if (success) {
+                    alert('Service Added Successfully!')
+                }
+            })
+    }
+    
     return (
         <div className="row">
             <Sidebar></Sidebar>

@@ -2,10 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faList, faSignOutAlt, faCommentDots, faPlus, faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart, faList, faSignOutAlt, faCommentDots, faPlus, faUserPlus, faTaxi } from '@fortawesome/free-solid-svg-icons'
 import { UserContext } from '../../../App';
 
 import logo from '../../../images/logos/logo.png';
+import { faCommentAlt } from '@fortawesome/free-regular-svg-icons';
 
 
 const Sidebar = () => {
@@ -41,14 +42,14 @@ const Sidebar = () => {
                 </li>
                 <li>
                     <Link to="postReview" className="sideStyle">
-                        <FontAwesomeIcon icon={faCommentDots} /> <span>Review</span>
+                        <FontAwesomeIcon icon={faCommentAlt} /> <span>Review</span>
                     </Link>
                 </li>
 
                 <div>
                     <li>
                         <Link to="admin" className="sideStyle">
-                            <FontAwesomeIcon icon={faList} /> <span>Service List</span>
+                            <FontAwesomeIcon icon={faTaxi} /> <span>Service List</span>
                         </Link>
                     </li>
                     <li>

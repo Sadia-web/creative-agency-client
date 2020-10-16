@@ -10,19 +10,13 @@ const ServiceList = () => {
 
     return (
         <div className="row">
-
             <Sidebar></Sidebar>
-
-
             <div style={{ height: '100vh', width: '80%', background: '#F4F7FC' }}>
-
                 <div className="pt-5 ml-5 d-flex justify-content-between">
                     <h1 >Order History</h1>
                     <h3 className="mr-5">{name}</h3>
                 </div>
-
                 <div className="customFormStyle">
-
                     <div className="bg-white p-5">
                         <div class="dropdown">
                             <button class="btn btn-transparent btn-outline-danger dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -39,12 +33,9 @@ const ServiceList = () => {
                             <h3>Web Applications</h3>
                             <p className="text-secondary">Lorem ipsum dolor sit amet.</p>
                         </div>
-
                     </div>
-
                 </div>
-
-        </div>
+            </div>
         </div >
     );
 };

@@ -52,11 +52,11 @@ const Login = () => {
     return (
         <div className="text-center">
             <div className="my-5">
-                <a class="navbar-brand" href="/"><img src={logo} alt="" style={{ height: '50px' }} /></a>
+                <a className="navbar-brand" href="/"><img src={logo} alt="" style={{ height: '50px' }} /></a>
             </div>
             <div className="login-form">
                 <h3>Login with</h3>
-                <button onClick={handleGoogleLogin} className="btn w-75 border my-3">
+                <button onClick={handleGoogleLogin} className="btn w-70 border my-2">
                     <img src={googleLogo} style={{ height: '30px' }} alt="" /> Continue with Google
                 </button>
                 <p>Don’t have an account? <a href="" onClick={handleGoogleLogin}>Create an account</a></p>

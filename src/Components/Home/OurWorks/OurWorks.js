@@ -9,7 +9,7 @@ import carousel3 from '../../../images/carousel-3.png';
 const OurWorks = () => {
     return (
 
-        <section className="testimonials">
+        <section className="test">
             <h1 className="text-white my-5">Here are some of <span style={{ color: '#7AB259' }}>our works</span></h1>
             <Carousel>
 

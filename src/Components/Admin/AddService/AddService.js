@@ -31,7 +31,7 @@ const AddService = () => {
             <Sidebar></Sidebar>
 
 
-            <div style={{ height: '100vh', width: '80%', background: '#F4F7FC' }}>
+            <div style={{ height: '90vh', width: '80%', background: '#F4F7FC' }}>
 
                 <div className="pt-5 ml-5 d-flex justify-content-between">
                     <h1>Add Service</h1>

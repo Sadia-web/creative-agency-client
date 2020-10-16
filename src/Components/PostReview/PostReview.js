@@ -1,5 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
+import { useForm } from 'react-hook-form';
 import { UserContext } from '../../App';
 import Sidebar from '../Dashboard/Sidebar/Sidebar';
 
@@ -7,6 +8,8 @@ const PostReview = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     const  { name, email, photoURL} = loggedInUser;
+
+    const {handleSubmit} = useForm();
 
     const onSubmit = data => {
         data.userImage = photoURL;
@@ -20,7 +23,7 @@ const PostReview = () => {
             .then(res => res.json())
             .then(success => {
                 if (success) {
-                    alert('Review post successfully.')
+                    alert('Review post successfully!')
                 }
             })
 
@@ -34,12 +37,12 @@ const PostReview = () => {
                     <h3 className="mr-5">{name}</h3>
                 </div>
 
-                <form className="customFormStyle" >
+                <form className="customFormStyle" onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-group">
-                        <input type="text" className="form-control form-control-lg" placeholder="Your name" />
+                        <input type="text" className="form-control form-control-lg" placeholder="Your name" required/>
                     </div>
                     <div className="form-group">
-                        <input type="text" className="form-control form-control-lg" placeholder="Company’s name, Designation" />
+                        <input type="text" className="form-control form-control-lg" placeholder="Company’s name, Designation" required/>
                     </div>
 
                     <div className="form-group">

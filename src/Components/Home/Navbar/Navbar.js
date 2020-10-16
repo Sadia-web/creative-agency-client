@@ -30,7 +30,7 @@ const Navbar = () => {
                             <a class="nav-link mr-5" href="#">Our Team</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mr-5" href="#">Contact Us</a>
+                            <a class="nav-link mr-5" href="#contactUs">Contact Us</a>
                         </li>
                         <li class="nav-item">
                             <button onClick={handleClick} className="btn btn-dark">Login</button>

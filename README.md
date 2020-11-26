@@ -2,7 +2,7 @@
 
 Live: https://creative-agency-client-82ec8.web.app/
 <br />
-Server-side:  
+client-side: https://github.com/Sadia-web/creative-agency-client 
 
 # Overview:
    * A full-stack and responsive app where you can order services & can able to see the order list.
